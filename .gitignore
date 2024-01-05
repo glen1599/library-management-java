@@ -1,0 +1,39 @@
+# ---- Build output (Java / NetBeans / Ant) ----
+build/
+dist/
+nbbuild/
+nbdist/
+*.class
+*.war
+*.ear
+*.jar
+!**/lib/*.jar
+
+# ---- NetBeans ----
+**/nbproject/private/
+.nb-gradle/
+
+# ---- IDE lain ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+out/
+
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ---- Log & crash dump ----
+*.log
+hs_err_pid*
+replay_pid*
+
+# ---- Local tooling (riwayat commit generator) ----
+generate_history*.py

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="237" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c47bfc57-0cac-47a7-ad0e-86f1f48b4607">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ptrans" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_kembalikanbuku.`kodetransaksi` AS tb_kembalikanbuku_kodetransaksi,
+     tb_kembalikanbuku.`kodeanggota` AS tb_kembalikanbuku_kodeanggota,
+     tb_kembalikanbuku.`kodebuku` AS tb_kembalikanbuku_kodebuku,
+     tb_kembalikanbuku.`judul` AS tb_kembalikanbuku_judul,
+     tb_kembalikanbuku.`pengarang` AS tb_kembalikanbuku_pengarang,
+     tb_kembalikanbuku.`tahunterbit` AS tb_kembalikanbuku_tahunterbit,
+     tb_kembalikanbuku.`jenis` AS tb_kembalikanbuku_jenis,
+     tb_kembalikanbuku.`tanggalpinjam` AS tb_kembalikanbuku_tanggalpinjam,
+     tb_kembalikanbuku.`tanggalkembali` AS tb_kembalikanbuku_tanggalkembali,
+     tb_kembalikanbuku.`jumlahpinjam` AS tb_kembalikanbuku_jumlahpinjam,
+     tb_kembalikanbuku.`keterlambatan` AS tb_kembalikanbuku_keterlambatan,
+     tb_kembalikanbuku.`denda` AS tb_kembalikanbuku_denda
+FROM
+     `tb_kembalikanbuku` tb_kembalikanbuku
+WHERE kodetransaksi LIKE '%$P!{ptrans}%']]>
+	</queryString>
+	<field name="tb_kembalikanbuku_kodetransaksi" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_kodeanggota" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_kodebuku" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_judul" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_pengarang" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_tahunterbit" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_jenis" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_tanggalpinjam" class="java.sql.Date"/>
+	<field name="tb_kembalikanbuku_tanggalkembali" class="java.sql.Date"/>
+	<field name="tb_kembalikanbuku_jumlahpinjam" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_keterlambatan" class="java.lang.String"/>
+	<field name="tb_kembalikanbuku_denda" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="68">
+			<staticText>
+				<reportElement x="0" y="-7" width="555" height="48" forecolor="#666666" uuid="dd7ede8e-57d1-4627-8851-5430f0c7e9c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRANSAKSI PENGEMBALIAN BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="41" width="92" height="20" forecolor="#666666" backcolor="#FFFFFF" uuid="e0b81c4e-d9f9-47b4-b06d-b1abf37a9b0e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[KODE TRANSAKSI  :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="92" y="41" width="46" height="20" forecolor="#666666" uuid="7760b25c-cf7c-4716-a49e-9aaa10afe60b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_kodetransaksi}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="41" width="100" height="20" forecolor="#666666" uuid="5d2d8ad1-1d54-43ad-8ca4-835b78506937"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMMM yyyy", new java.util.Locale("id")).format (new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="38519465-6186-4343-b71a-d7394eedfe50"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="46" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="9326a102-47c2-4231-a699-8623eaeae631"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="46" y="0" width="46" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="a68af7d2-c17a-4749-a27f-65de868bb3d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KDB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="92" y="0" width="92" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="4f62f443-2aaf-4021-8477-698df09520a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUDUL BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="0" width="70" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="031c446a-09da-4917-9a3b-e87c6a1b0947"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PENGARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="254" y="0" width="46" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="26fd9c2a-5316-4c02-bfcc-4c21f1f4e3ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TERBIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="300" y="0" width="75" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="1128aca2-b3f9-432a-8081-19c830e1d883"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="375" y="0" width="61" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="78ca6109-c98e-4972-8b49-a94d7a11657a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL PINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="436" y="0" width="73" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="a2d65742-51ce-4ca0-9e7f-2c337be58b60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL KEMBALI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="509" y="0" width="46" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="1e2bd978-0069-4dbc-af45-a2bc266f4262"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" forecolor="#666666" uuid="44c888ab-c946-4ecc-884a-1536f757931c"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="46" height="20" forecolor="#666666" uuid="60be9ede-74b7-4234-8ba9-7d877d8e9a41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_kodeanggota}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="46" y="0" width="46" height="20" forecolor="#666666" uuid="edca51c8-f7f1-424d-a994-b75449806fa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_kodebuku}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="92" y="0" width="92" height="20" forecolor="#666666" uuid="1fd4e005-5bb9-4dd5-8a4f-ec5c1d3b83a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_judul}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="184" y="0" width="70" height="20" forecolor="#666666" uuid="e4e2abcc-3094-4825-8b93-1506c85833cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_pengarang}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="254" y="0" width="46" height="20" forecolor="#666666" uuid="a0761174-8025-400f-9ee5-f3e5fc566ae3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_tahunterbit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="300" y="0" width="75" height="20" forecolor="#666666" uuid="ba27f22f-d806-41da-894d-8fd635b6607c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_jenis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="375" y="0" width="61" height="20" forecolor="#666666" uuid="eda9f4b2-27ac-48ea-b423-3bc08c97ef16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_tanggalpinjam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="436" y="0" width="73" height="20" forecolor="#666666" uuid="9408842b-038e-4f4b-bfdb-c317240ee89e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_tanggalkembali}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="509" y="0" width="46" height="20" forecolor="#666666" uuid="693f5219-015e-435b-afac-abf1384db8ce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_jumlahpinjam}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="75">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="509" y="55" width="46" height="20" forecolor="#666666" uuid="79e213da-edce-4215-add3-e341202b2eb2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_denda}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="402" y="55" width="95" height="20" forecolor="#666666" backcolor="#FFFFFF" uuid="a7bb02f2-3a35-4268-9c99-bd3b0ec72435"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DENDA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="509" y="35" width="46" height="20" forecolor="#666666" uuid="96a3eb9c-608e-440c-b630-b2f4a7845658"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_kembalikanbuku_keterlambatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="402" y="35" width="95" height="20" forecolor="#666666" backcolor="#FFFFFF" uuid="e989cbae-5667-48de-aecc-9986a60e5cad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[KETERLAMBATAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="35" width="12" height="20" uuid="c9573514-506b-4423-889f-b4648c7a5d2b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="55" width="12" height="20" uuid="55ead75c-1883-4d5b-b6a6-a57240881dbe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="402" y="54" width="153" height="1" uuid="955f71c6-f0e0-49a3-b542-f4ed48d6d776"/>
+			</line>
+			<line>
+				<reportElement x="402" y="74" width="153" height="1" uuid="e187a5f8-8912-48c0-a27b-b3f41a5e3090"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="7" width="555" height="20" forecolor="#666666" uuid="b3129498-ca85-4f2c-8dbd-a696b580f4c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Keterlambatan 1 hari dalam pengembalian buku akan di kenakan denda sebesar ; Rp.1000]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

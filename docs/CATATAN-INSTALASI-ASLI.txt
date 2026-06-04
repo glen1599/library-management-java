@@ -1,0 +1,17 @@
+===============================================================================
+				PENTING !!!
+===============================================================================
+
+	SYSTEM YANG DIBUTUHKAN UNTUK MENJALANKAN PROGRAM INI :
+
+		1.HARUS TERINSTALL SOFTWARE XAMPP PADA KOMPUTER
+		2.HARUS TERINSTALL JAVA,JRE,JDK8 PADA KOMPUTER
+		3.HARUS TERINSTALL SOFTWARE NETBEAN 8.2
+		4.COMPATIBLE DENGAN WINDOWS 7 DAN WINDOWS 10
+
+==============================================================================
+
+		DAN MOHON JANGAN MENJUAL KEMBALI APLIKASI INI !!!
+
+==============================================================================
+				TERIMA KASIH :)
